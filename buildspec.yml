@@ -1,0 +1,18 @@
+version: 0.1
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - ls -al
+      - mvn package
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - pip install boto3
+      - python aws-fastup-build/update_stacks.py
+
+artifacts:
+  files:
+    - target/*
+    - aws-fastup-build/*

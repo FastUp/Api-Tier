@@ -1,0 +1,47 @@
+[
+  {
+    "ParameterKey": "EnvironmentParm",
+    "ParameterValue": "Staging"
+  },
+  {
+    "ParameterKey": "ApiTierInstanceTypeParm",
+    "ParameterValue": "t2.micro"
+  },
+  {
+    "ParameterKey": "ApiTierAmiIdParm",
+    "ParameterValue": "ami-0777ed67"
+  },
+  {
+    "ParameterKey": "CustomerAppInstanceTypeParm",
+    "ParameterValue": "t2.micro"
+  },
+  {
+    "ParameterKey": "CustomerAppAmiIdParm",
+    "ParameterValue": "ami-0777ed67"
+  },
+  {
+    "ParameterKey": "EntitiesStackNameParm",
+    "ParameterValue": "SpinSci-Entities-1-0-0-staging"
+  },
+  {
+    "ParameterKey": "NetworksStackNameParm",
+    "ParameterValue": "SpinSci-Network-1-0-0-staging"
+  },
+  {
+    "ParameterKey": "SshKeyPairNameParm",
+    "ParameterValue": "sdole-us-west-2"
+  },
+  {
+    "ParameterKey": "ReleaseArtifactsBucketParm",
+    "ParameterValue": "REPLACE_RELEASEARTIFACTSBUCKETPARM"
+  },
+  {
+    "ParameterKey": "ReleaseWarFileKeyParm",
+    "ParameterValue": "REPLACE_RELEASEWARFILEKEYPARM"
+  }
+,  {
+    "ParameterKey": "WarFileNameParm",
+    "ParameterValue": "REPLACE_WARFILENAME"
+  }
+]
+
