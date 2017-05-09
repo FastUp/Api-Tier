@@ -26,10 +26,6 @@ Parameters:
     Type: String
   ApiTierAmiIdParm:
     Type: AWS::EC2::Image::Id
-  CustomerAppInstanceTypeParm:
-    Type: String
-  CustomerAppAmiIdParm:
-    Type: AWS::EC2::Image::Id
   EntitiesStackNameParm:
     Type: String
   SshKeyPairNameParm:
