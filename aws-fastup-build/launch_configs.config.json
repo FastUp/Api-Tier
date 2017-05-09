@@ -12,14 +12,6 @@
     "ParameterValue": "ami-0777ed67"
   },
   {
-    "ParameterKey": "CustomerAppInstanceTypeParm",
-    "ParameterValue": "t2.micro"
-  },
-  {
-    "ParameterKey": "CustomerAppAmiIdParm",
-    "ParameterValue": "ami-0777ed67"
-  },
-  {
     "ParameterKey": "EntitiesStackNameParm",
     "ParameterValue": "SpinSci-Entities-1-0-0-staging"
   },
