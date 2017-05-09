@@ -50,7 +50,7 @@ with open("aws-fastup-build/launch_configs.yaml") as template_stream:
     lines = template_stream.readlines()
     for line in lines:
         data += line
-stack_name = "SpinSciCustomerApp-" + version_text
+stack_name = "SpinSciApi-" + version_text
 new_stack = cf_client.create_stack(
     StackName=stack_name,
     TemplateBody=data,

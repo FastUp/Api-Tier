@@ -51,9 +51,3 @@ Outputs:
         Fn::Sub: ${AWS::StackName}-ApiTierLaunchConfigurationOutput
     Value:
       Ref: ApiTierLaunchConfiguration
-  CustomerAppLaunchConfigurationOutput:
-    Export:
-      Name:
-        Fn::Sub: ${AWS::StackName}-CustomerAppLaunchConfigurationOutput
-    Value:
-      Ref: CustomerAppLaunchConfiguration
