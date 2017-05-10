@@ -14,7 +14,7 @@ public class SimpleServlet extends HttpServlet {
         res.setContentType("application/json");
         PrintWriter out = res.getWriter();
         out.println("{'message':'hello world FROM API TIER','version':" + System.getenv("FastupVersion") + "}");
-        URL customerApp = new URL("https://customer.spinsci.fastup.io/customer-app-1.0-SNAPSHOT/service");
+        URL customerApp = new URL("https://customer.spinscicloud.fastup.io/customer-app-1.0-SNAPSHOT/service");
         BufferedReader in = new BufferedReader(new InputStreamReader(customerApp.openStream()));
         String inputLine;
         StringBuilder resString = new StringBuilder();
