@@ -13,21 +13,25 @@ public class SimpleServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("application/json");
         PrintWriter out = res.getWriter();
-        out.println("{'message':'hello world FROM API TIER','version':" + System.getenv("FastupVersion") + "}");
+        out.println("{'message':'hello world SpinSci API','version':" + System.getenv("FastupVersion") + "}");
+        StringBuilder resString = getRemoteResponse();
+        out.println(
+                "{'message':'hello SpinSci world SpinSci API','version':" + System.getenv("FastupVersion") + "," +
+                        "'customer_message':'" + resString.toString() + "'}"
+        );
+        out.flush();
+        out.close();
+    }
+
+    private StringBuilder getRemoteResponse() throws IOException {
         URL customerApp = new URL("https://customer.spinscicloud.fastup.io/customer-app-1.0-SNAPSHOT/service");
         BufferedReader in = new BufferedReader(new InputStreamReader(customerApp.openStream()));
         String inputLine;
         StringBuilder resString = new StringBuilder();
-
         while ((inputLine = in.readLine()) != null)
             resString.append(inputLine);
-        out.println(
-                "{'message':'hello world FROM API TIER','version':" + System.getenv("FastupVersion") + "," +
-                        "'customer_message':'" + resString.toString() + "'}"
-        );
         in.close();
-        out.flush();
-        out.close();
+        return resString;
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
