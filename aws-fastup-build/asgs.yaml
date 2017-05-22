@@ -77,7 +77,7 @@ Resources:
     UpdatePolicy:
       AutoScalingRollingUpdate:
         MaxBatchSize: 1
-        MinInstancesInService: 2
+        MinInstancesInService: !Ref ApiTierAsgDesiredCapacityParm
         SuspendProcesses:
           - HealthCheck
           - ReplaceUnhealthy
