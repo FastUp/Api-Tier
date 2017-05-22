@@ -1,5 +1,7 @@
 package io.fastup;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +13,7 @@ import java.net.URL;
 
 public class SimpleServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        Logger.getLogger(this.getClass()).debug("Starting GET");
         res.setContentType("application/json");
         PrintWriter out = res.getWriter();
         out.println("{'message':'hello world SpinSci API','version':" + System.getenv("FastupVersion") + "}");
@@ -21,9 +24,11 @@ public class SimpleServlet extends HttpServlet {
         );
         out.flush();
         out.close();
+        Logger.getLogger(this.getClass()).debug("Finishing GET");
     }
 
     private StringBuilder getRemoteResponse() throws IOException {
+        Logger.getLogger(this.getClass()).debug("Attempting to get response from customer app");
         URL customerApp = new URL("https://customer.spinscicloud.fastup.io/customer-app-1.0-SNAPSHOT/service");
         BufferedReader in = new BufferedReader(new InputStreamReader(customerApp.openStream()));
         String inputLine;
@@ -31,6 +36,7 @@ public class SimpleServlet extends HttpServlet {
         while ((inputLine = in.readLine()) != null)
             resString.append(inputLine);
         in.close();
+        Logger.getLogger(this.getClass()).debug("Received response: " + resString.toString());
         return resString;
     }
 
